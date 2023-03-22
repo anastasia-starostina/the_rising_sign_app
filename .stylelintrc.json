@@ -1,4 +1,13 @@
 
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"]
+  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+        true,
+        {
+            "ignoreAtRules": ["tailwind"]
+        }
+    ]
+}
 }

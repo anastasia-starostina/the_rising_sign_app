@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-function DailyAdvice() {
+function DailyHoroscope() {
 
   const [advice, setAdvice] = useState('')
 
-  const url = "https://api.adviceslip.com/advice"
+//refactor into POST request
+
+  const url = "https://aztro.sameerkumar.website?sign=aries&day=today"
   const fetchData = async () => {
     try {
       const response = await fetch(url);
@@ -23,4 +25,4 @@ function DailyAdvice() {
   )
 }
 
-export default DailyAdvice
+export default DailyHoroscope
