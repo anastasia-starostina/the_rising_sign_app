@@ -1,7 +1,7 @@
 import './index.css';
 // import DailyHoroscope from './DailyHoroscope';
-import React, { useState, useEffect } from 'react';
-//
+import { useState, useEffect } from 'react';
+import Gemini from './assets/zodiac_signs/gemini.png'
 
 function App() {
   const [horoscope, setHoroscope] = useState('');
@@ -42,10 +42,12 @@ function App() {
               <p>Apr 20 - May 20</p>
             </div>
           </button>
-          <button onClick={() => setSign('gemini')}>
-            <div className="bg-slate-300">
-              <h3>Gemini</h3>
-              <p>May 21 - Jun 20</p>
+          <button onClick={() => setSign('gemini')} className="">
+            <div className="flex flex-col items-center justify-center rounded-full w-40 p-7 relative">
+              <img className="w-10 relative" src={Gemini} alt="gemini sign" />
+              <h3 className="relative">Gemini</h3>
+              <p className="text-sm relative">May 21 - Jun 20</p>
+              <div className="absolute h-[100%] w-[100%] z-[-100] top-0 left-0 bg-gradient-to-r from-[#818cf8] via-[#c4b5fd] to-[#fce7f3] rounded-full blur-xl"></div>
             </div>
           </button>
           <button onClick={() => setSign('cancer')}>
@@ -108,6 +110,14 @@ function App() {
         {horoscope}
         {/* <DailyHoroscope /> */}
       </div>
+      <footer className="fixed left-0 bottom-0 w-[100%] bg-slate-50 text-center">
+        <a
+          href="https://www.flaticon.com/free-icons/gemini"
+          title="gemini icons"
+        >
+          Zodiac icons created by Freepik - Flaticon
+        </a>
+      </footer>
     </>
   );
 }
