@@ -2,9 +2,9 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    fontFamily: {
-      display: ["Merriweather", "serif"],
-    },
+      fontFamily: {
+        display: ['Merriweather', 'serif'],
+      }
   },
   plugins: [],
 };
