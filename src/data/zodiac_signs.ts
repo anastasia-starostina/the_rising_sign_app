@@ -20,7 +20,7 @@ export const signs = [
   },
   {
     id: 1,
-    name: 'taurius',
+    name: 'taurus',
     time: 'Apr 20 - May 20',
     src: Taurius,
   },
