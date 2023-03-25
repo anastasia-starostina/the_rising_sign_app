@@ -4,6 +4,11 @@ import { useState, useEffect } from 'react';
 import { ZodiacSign } from './types';
 import { capitalize } from './utils/capitalizeFirstLetter';
 import Galaxy from './assets/backgrounds/cosmos.jpg';
+import MagnifyingGlassIcon from "@heroicons/react/24/outline/MagnifyingGlassIcon" 
+import {FaFacebookF} from "react-icons/fa/index"
+import {ImInstagram} from "react-icons/im/index"
+import {AiFillYoutube} from "react-icons/ai/index"
+import {AiOutlineTwitter} from "react-icons/ai/index"
 
 function App() {
   const [horoscope, setHoroscope] = useState('');
@@ -25,10 +30,25 @@ function App() {
 
   return (
     <>
-      <nav className="text-base my-5 mx-3 text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl">
-        RISING SIGN
-      </nav>
-      <header className=" relative font-display my-5 text-center w-full h-96 flex flex-col content-center justify-center">
+      <nav></nav>
+      <header className="text-base my-5 mx-9 flex justify-evenly">
+        <form className="text-[#3a3153] flex justify-between">
+          <input type="text" placeholder="Search" name="Search" />
+          <a>
+            <MagnifyingGlassIcon className="h-6 w-6" />
+          </a>
+        </form>
+        <h3 className="text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl">
+          RISING SIGN
+        </h3>
+        <div className="flex gap-x-8 items-center">
+          <FaFacebookF />
+          <ImInstagram />
+          <AiFillYoutube />
+          <AiOutlineTwitter/>
+        </div>
+      </header>
+      <section className=" relative font-display my-5 text-center w-full h-96 flex flex-col content-center justify-center">
         <h3 className="relative tracking-[.25em] my-7 text-[#ffffff] text-sm lg:text-sm md:text-sm">
           KEEP UP WITH OUR STORIES
         </h3>
@@ -42,7 +62,7 @@ function App() {
           className=" object-cover absolute h-[100%] w-[100%] z-[-100] top-0 left-0 bg-gradient-to-b from-[rgba(0, 0, 0, 0.5)] to-[rgba(0, 0, 0, 0.5)]"
           src={Galaxy}
         />
-      </header>
+      </section>
       <div className="p-12">
         <section className="my-4 mx-9 font-display grid items-center justify-items-center gap-4 grid-cols-1 md:grid-cols-3 l:grid-cols-4 xl:grid-cols-6">
           {signs.map((sign: ZodiacSign) => (
