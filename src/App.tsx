@@ -1,6 +1,6 @@
 import './index.css';
 import { signs } from './data/zodiac_signs';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { ZodiacSign } from './types';
 import { capitalize } from './utils/capitalizeFirstLetter';
 import Galaxy from './assets/backgrounds/cosmos.jpg';
@@ -12,7 +12,10 @@ import { AiOutlineTwitter } from 'react-icons/ai/index';
 
 function App() {
   const [horoscope, setHoroscope] = useState('');
+  const [aries, setAries] = useState('');
+  const [taurus, setTaurus] = useState('')
   const [sign, setSign] = useState('cancer');
+  let horoscopes: string[] = [];
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=${sign}&day=today`, {
@@ -21,16 +24,40 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         setHoroscope(json.description);
-        console.log(json);
+        console.log(json.description);
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, [sign]);
 
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=aries&day=today`, {
+      method: 'POST',
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        setAries(json.description);
+        console.log(json);
+        horoscopes = [...horoscopes, aries]
+      });
+  }, []);
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=taurus&day=today`, {
+      method: 'POST',
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        setTaurus(json.description);
+        console.log(json);
+        horoscopes = [...horoscopes, taurus]
+        console.log("Horoscopes" + horoscopes)
+      });
+  }, []);
+
   return (
     <>
-      <div className="fixed top-0 w-full bg-white z-50 border-solid border-b-[1.5px] border-[#c9c4d7]">
+      <div className="fixed top-0 w-full bg-white z-50 border-solid border-b-[2px] border-[#c9c4d7]">
         <nav className=" border-solid border-b-[1.5px] border-[#c9c4d7]">
           <ul className="flex justify-center gap-14 font-light my-4 mx-9 text-sm tracking-wide">
             <li>
@@ -101,16 +128,24 @@ function App() {
         </section>
       </div>
       <section className="mx-20 md:mx-44 my-4 ">
-        <h1 className="text-lg  md:text-2xl font-bold tracking-wide">
+        <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
           Free Horoscopes for Every Star Sign
         </h1>
         <p>
           What does the future have in store for you? From Aries to Pisces, our
-          daily Vedic Horoscopes will help you understand your relationships and
-          your purpose.{' '}
+          free daily horoscopes will help you understand your relationships and
+          purpose. No day is the same, and your horoscope today will differ from
+          your horoscope tomorrow. With our free horoscopes, you can be sure
+          you'll get your regular astrological insights by learning what's in
+          the stars.
         </p>
       </section>
-      <div className="h-60 w-4/6 text-center m-auto">{horoscope}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 ">
+        {/* {horoscopes.map((horoscope) => {
+          <div>Hello</div>
+        })} */}
+      </div>
+
       <footer className="fixed left-0 bottom-0 w-[100%] bg-slate-50 text-center">
         <a
           href="https://www.flaticon.com/free-icons/gemini"
