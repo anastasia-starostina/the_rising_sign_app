@@ -12,7 +12,7 @@ function Header() {
       <nav className=" border-solid border-b-[1.5px] border-[#c9c4d7]">
         <ul className="flex justify-center gap-14 font-light my-4 mx-9 text-sm tracking-wide">
           <li>
-            <a>HOME</a>
+            <a className='line-through'>HOME</a>
           </li>
           <li>
             <a>HOROSCOPES</a>
