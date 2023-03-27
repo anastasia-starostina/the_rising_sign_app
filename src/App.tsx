@@ -120,11 +120,11 @@ function App() {
     <>
       <Header />
       <Signs />
-      <section className="mx-20 md:mx-44 my-4 ">
-        <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
+      <section className="mx-20 md:mx-40 my-4 ">
+        <h1 className="text-lg py-3 mb-3 md:text-3xl font-bold tracking-wide">
           Free Horoscopes for Every Star Sign
         </h1>
-        <p className=" text-xl leading-7 tracking-wide">
+        <p className=" text-base leading-7 tracking-wide md:text-xl">
           What does the future have in store for you? From Aries to Pisces, our
           free daily horoscopes will help you understand your relationships and
           purpose. No day is the same, and your horoscope today will differ from
@@ -133,7 +133,7 @@ function App() {
           the stars.
         </p>
       </section>
-      <div className="mx-20 md:mx-44 my-4 grid grid-cols-1 gap-x-20 gap-y-5 md:grid-cols-2 ">
+      <div className="mx-20 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
         <Horoscope children={aries} name="Aries" />
         <Horoscope children={taurus} name="Taurus" />
         <Horoscope children={gemini} name="Gemini" />

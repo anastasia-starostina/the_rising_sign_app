@@ -8,7 +8,7 @@ type HoroscopeProps = {
 
 function Horoscope({ children, name }: HoroscopeProps){
   return (
-    <div className="mx-2 my-2 leading-7 text-lg font-light hover:text-indigo-400">
+    <div className="mx-2 my-2 leading-7 text-lg font-light p-7 bg-[#fcf3f8] rounded-lg hover:text-indigo-400">
       <h3 className="text-2xl font-semibold py-3 tracking-wide">{name}</h3>
       {children}
       <p className="text-sm mt-4 tracking-wider hover:text-indigo-700">
