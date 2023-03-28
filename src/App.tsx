@@ -1,11 +1,10 @@
 import './index.css';
-import { useState, useEffect, ReactNode } from 'react';
-import SlArrowRight from 'react-icons/si/index';
+import Logo from './assets/backgrounds/logo.png';
+import { useState, useEffect} from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Signs from './components/Signs';
 import Horoscope from './components/Horoscope';
-import SubscribeForm from './components/SubscribeForm';
 
 function App() {
   const [horoscopes, setHoroscopes] = useState();
@@ -147,6 +146,19 @@ function App() {
         <Horoscope children={capricorn} name="Capricorn" />
         <Horoscope children={pisces} name="Pisces" />
       </div>
+      <section className="mx-20 md:mx-40 my-5">
+        <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
+          Support Us on Patreon
+        </h1>
+        <h3>
+          If you enjoy our free daily horoscopes, please consider supporting
+          this project on{' '}
+          <a className="text-indigo-500" href="">
+            Patreon.
+          </a>
+        </h3>
+        <img src={Logo} alt="rising sign logo"/>
+      </section>
       <Footer />
     </>
   );
