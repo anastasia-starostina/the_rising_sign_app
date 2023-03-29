@@ -15,7 +15,7 @@ function Footer() {
       </div>
       <p className="text-sm py-1 mt-10 text-slate-600">
         <a href="https://github.com/nsstarr">
-          Designed & built by Anastasia Starostina
+          &copy; Designed & built by Anastasia Starostina
         </a>
       </p>
       <a href="https://www.flaticon.com/free-icons">
