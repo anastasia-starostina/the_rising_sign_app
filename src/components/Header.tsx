@@ -4,6 +4,7 @@ import { ImInstagram } from 'react-icons/im/index';
 import { AiFillYoutube } from 'react-icons/ai/index';
 import { AiOutlineTwitter } from 'react-icons/ai/index';
 import Galaxy from '../assets/backgrounds/cosmos.jpg';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -12,16 +13,16 @@ function Header() {
       <nav className=" border-solid border-b-[1.5px] border-[#c9c4d7]">
         <ul className="flex justify-center gap-14 font-light my-4 mx-9 text-sm tracking-wide">
           <li>
-            <a className='line-through'>HOME</a>
+            <Link to="/" className='line-through'>HOME</Link>
           </li>
           <li>
-            <a>HOROSCOPES</a>
+            <Link to="/horoscopes">HOROSCOPES</Link>
           </li>
           <li>
-            <a>EXPLORE</a>
+            <Link to="/explore">EXPLORE</Link>
           </li>
           <li>
-            <a>ABOUT</a>
+            <Link to="/about">ABOUT</Link>
           </li>
         </ul>
       </nav>
