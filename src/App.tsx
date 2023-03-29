@@ -121,7 +121,7 @@ function App() {
       <Header />
       <Signs />
       <section className="mx-20 md:mx-40 my-4 ">
-        <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
+        <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide hover:text-indigo-600">
           Free Horoscopes for Every Star Sign
         </h1>
         <p className=" text-base leading-7 tracking-wide md:text-xl">
