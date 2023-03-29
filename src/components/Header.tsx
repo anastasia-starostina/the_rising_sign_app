@@ -4,47 +4,75 @@ import { ImInstagram } from 'react-icons/im/index';
 import { AiFillYoutube } from 'react-icons/ai/index';
 import { AiOutlineTwitter } from 'react-icons/ai/index';
 import Galaxy from '../assets/backgrounds/cosmos.jpg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
   return (
     <>
-    <div className="fixed top-0 w-full bg-white z-50 border-solid border-b-[2px] border-[#c9c4d7]">
-      <nav className=" border-solid border-b-[1.5px] border-[#c9c4d7]">
-        <ul className="flex justify-center gap-14 font-light my-4 mx-9 text-sm tracking-wide">
-          <li>
-            <Link to="/" className='line-through'>HOME</Link>
-          </li>
-          <li>
-            <Link to="/horoscopes">HOROSCOPES</Link>
-          </li>
-          <li>
-            <Link to="/explore">EXPLORE</Link>
-          </li>
-          <li>
-            <Link to="/about">ABOUT</Link>
-          </li>
-        </ul>
-      </nav>
-      <header className="text-base my-8 mx-3 flex justify-around">
-        <form className="text-[#3a3153] flex justify-between border-solid border-b-[1.5px] border-[#c9c4d7] invisible lg:visible">
-          <input type="text" placeholder="Search" name="Search" />
-          <a>
-            <MagnifyingGlassIcon className=" h-6 w-6" />
-          </a>
-        </form>
-        <h3 className=" text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl absolute">
-          RISING SIGN
-        </h3>
-        <div className="invisible flex gap-x-8 items-center lg:visible">
-          <FaFacebookF />
-          <ImInstagram />
-          <AiFillYoutube />
-          <AiOutlineTwitter />
-        </div>
-      </header>
-    </div>
-    <section className=" relative font-display mt-36 text-center w-full h-64 flex flex-col content-center justify-center">
+      <div className="fixed top-0 w-full bg-white z-50 border-solid border-b-[2px] border-[#c9c4d7]">
+        <nav className=" border-solid border-b-[1.5px] border-[#c9c4d7]">
+          <ul className="flex justify-center gap-14 font-light my-4 mx-9 text-sm tracking-wide">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? 'line-through font-medium' : ''
+                }
+              >
+                HOME
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/horoscopes"
+                className={({ isActive }) =>
+                  isActive ? 'line-through font-medium' : ''
+                }
+              >
+                HOROSCOPES
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/explore"
+                className={({ isActive }) =>
+                  isActive ? 'line-through font-medium' : ''
+                }
+              >
+                EXPLORE
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? 'line-through font-medium' : ''
+                }
+              >
+                ABOUT
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <header className="text-base my-8 mx-3 flex justify-around">
+          <form className="text-[#3a3153] flex justify-between border-solid border-b-[1.5px] border-[#c9c4d7] invisible lg:visible">
+            <input type="text" placeholder="Search" name="Search" />
+            <a>
+              <MagnifyingGlassIcon className=" h-6 w-6" />
+            </a>
+          </form>
+          <h3 className=" text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl absolute">
+            RISING SIGN
+          </h3>
+          <div className="invisible flex gap-x-8 items-center lg:visible">
+            <FaFacebookF />
+            <ImInstagram />
+            <AiFillYoutube />
+            <AiOutlineTwitter />
+          </div>
+        </header>
+      </div>
+      <section className=" relative font-display mt-36 text-center w-full h-64 flex flex-col content-center justify-center">
         <h3 className="relative tracking-[.25em] my-7 mx-9 text-[#ffffff] text-sm lg:text-sm md:text-sm">
           KEEP UP WITH OUR STORIES
         </h3>
@@ -59,7 +87,7 @@ function Header() {
           src={Galaxy}
         />
       </section>
-      </>
+    </>
   );
 }
 

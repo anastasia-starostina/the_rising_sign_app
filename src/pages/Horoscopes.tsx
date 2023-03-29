@@ -1,4 +1,12 @@
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+
 function Horoscopes() {
-  return <div>Horoscopes Page</div>;
+  return (
+   ( <div>
+      <Header />
+      <Footer />
+    </div>)
+  );
 }
 export default Horoscopes;
