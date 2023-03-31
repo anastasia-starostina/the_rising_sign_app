@@ -1,6 +1,6 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import HoroscopeImage from '../assets/backgrounds/esoteric.jpg';
+import HoroscopeImage from '../assets/backgrounds/celestial.jpg';
 
 function Horoscopes() {
   return (
@@ -8,7 +8,7 @@ function Horoscopes() {
       <Header
         isDarkBackground={true}
         image={HoroscopeImage}
-        header="What is Your Star Sign?"
+        header="Horoscopes For Today, Tomorrow and Yesterday"
         subheader="Discover everyday magic of our horoscope predictions"
       />
       <div className="my-20 flex flex-col justify-center items-center gap-y-8 gap-x-20 md:flex-row tracking-wider">
