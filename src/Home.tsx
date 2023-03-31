@@ -1,12 +1,13 @@
 import './index.css';
 import Logo from './assets/backgrounds/logo.png';
-import { useState, useEffect, ReactNode} from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Signs from './components/Signs';
 import Horoscope from './components/Horoscope';
+import Galaxy from './assets/backgrounds/cosmos.jpg';
 
-function Home(){
+function Home() {
   const [horoscopes, setHoroscopes] = useState();
   const [aries, setAries] = useState('');
   const [taurus, setTaurus] = useState('');
@@ -118,7 +119,12 @@ function Home(){
 
   return (
     <>
-      <Header />
+      <Header
+        isDarkBackground={true}
+        image={Galaxy}
+        header="What's your Zodiac Sign? Read Your Daily Horosope."
+        subheader="Discover what your zodiac sign has in store for you today."
+      />
       <Signs />
       <section className="mx-20 md:mx-40 my-4 ">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide hover:text-indigo-600">
@@ -157,7 +163,7 @@ function Home(){
             Patreon.
           </a>
         </h3>
-        <img src={Logo} alt="rising sign logo"/>
+        <img src={Logo} alt="rising sign logo" />
       </section>
       <Footer />
       <div>hello world</div>

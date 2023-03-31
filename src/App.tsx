@@ -24,20 +24,5 @@ export function App() {
   );
 }
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/" element={<RootLayout />}>
-//       <Route index element={<Home />} />
-//       <Route path="about" element={<About />} />
-//       <Route path="explore" element={<Explore />} />
-//       <Route path="horoscopes" element={<Horoscopes />} />
-//       <Route path="*" element={<NoMatch />} />
-//     </Route>
-//   )
-// );
-
-// function App() {
-//   return <RouterProvider router={router} />;
-// }
 
 export default App;
