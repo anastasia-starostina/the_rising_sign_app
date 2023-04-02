@@ -8,113 +8,283 @@ import Horoscope from './components/Horoscope';
 import Galaxy from './assets/backgrounds/cosmos.jpg';
 
 function Home() {
-  const [horoscopes, setHoroscopes] = useState();
-  const [aries, setAries] = useState('');
-  const [taurus, setTaurus] = useState('');
-  const [gemini, setGemini] = useState('');
-  const [cancer, setCancer] = useState('');
-  const [leo, setLeo] = useState('');
-  const [virgo, setVirgo] = useState('');
-  const [libra, setLibra] = useState('');
-  const [scorpio, setScorpio] = useState('');
-  const [sagittarius, setSagittarius] = useState('');
-  const [capricorn, setCapricorn] = useState('');
-  const [aquarius, setAquarius] = useState('');
-  const [pisces, setPisces] = useState('');
+  const [aries, setAries] = useState<string | null>('');
+  const [taurus, setTaurus] = useState<string | null>('');
+  const [gemini, setGemini] = useState<string | null>('');
+  const [cancer, setCancer] = useState<string | null>('');
+  const [leo, setLeo] = useState<string | null>('');
+  const [virgo, setVirgo] = useState<string | null>('');
+  const [libra, setLibra] = useState<string | null>('');
+  const [scorpio, setScorpio] = useState<string | null>('');
+  const [sagittarius, setSagittarius] = useState<string | null>('');
+  const [capricorn, setCapricorn] = useState<string | null>('');
+  const [aquarius, setAquarius] = useState<string | null>('');
+  const [pisces, setPisces] = useState<string | null>('');
+
+  //stringify today's date
+  const date = '04-02-2023';
+
+  const fetchOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+  };
+  //Fetch Aries
+  const getAries = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=aries&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('aries', data.description);
+      setAries(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Taurus
+  const getTaurus = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=taurus&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('taurus', data.description);
+      setTaurus(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Gemini
+  const getGemini = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=gemini&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('taurus', data.description);
+      setGemini(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Cancer
+  const getCancer = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=cancer&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('cancer', data.description);
+      setCancer(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Leo
+  const getLeo = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=leo&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('leo', data.description);
+      setLeo(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Virgo
+  const getVirgo = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=virgo&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('virgo', data.description);
+      setVirgo(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Libra
+  const getLibra = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=libra&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('libra', data.description);
+      setLibra(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Scorpio
+  const getScorpio = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=scorpio&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('scorpio', data.description);
+      setScorpio(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Sagittarius
+  const getSagittarius = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=sagittarius&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('sagittarius', data.description);
+      setSagittarius(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Capricorn
+  const getCapricorn = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=capricorn&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('capricorn', data.description);
+      setCapricorn(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Aquarius
+  const getAquarius = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=aquarius&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('aquarius', data.description);
+      setAquarius(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  //Fetch Pisces
+  const getPisces = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_APP_BASE_URL}&sign=pisces&date=${date}`,
+        fetchOptions
+      );
+      const data = await response.json();
+      localStorage.setItem('pisces', data.description);
+      setPisces(data.description);
+      console.log(data.description);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    //Fetch Aries
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=aries&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setAries(json.description);
-      });
-    //Fetch Taurus
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=taurus&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setTaurus(json.description);
-      });
-    //Fetch Gemini
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=gemini&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setGemini(json.description);
-      });
-    //Fetch Cancer
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=cancer&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setCancer(json.description);
-      });
-    //Fetch Leo
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=leo&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setLeo(json.description);
-      });
-
-    //Fetch Virgo
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=virgo&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setVirgo(json.description);
-      });
-    //Fetch Libra
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=libra&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setLibra(json.description);
-      });
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=scorpio&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setScorpio(json.description);
-      });
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=sagittarius&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setSagittarius(json.description);
-      });
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=capricorn&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setCapricorn(json.description);
-      });
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=aquarius&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setAquarius(json.description);
-      });
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=pisces&day=today`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setPisces(json.description);
-      });
+    ///////////////////////Fetch Aries////////////////////////
+    if (window.localStorage.getItem('aries') === null) {
+      getAries();
+    } else {
+      setAries(window.localStorage.getItem('aries'));
+    }
+    ///////////////////////Fetch Taurus////////////////////////
+    if (window.localStorage.getItem('taurus') === null) {
+      getTaurus();
+    } else {
+      setTaurus(window.localStorage.getItem('taurus'));
+    }
+    ///////////////////////Fetch Gemini////////////////////////
+    if (window.localStorage.getItem('gemini') === null) {
+      getGemini();
+    } else {
+      setGemini(window.localStorage.getItem('gemini'));
+    }
+    ///////////////////////Fetch Cancer////////////////////////
+    if (window.localStorage.getItem('cancer') === null) {
+      getCancer();
+    } else {
+      setCancer(window.localStorage.getItem('cancer'));
+    }
+    ///////////////////////Fetch Leo////////////////////////
+    if (window.localStorage.getItem('leo') === null) {
+      getLeo();
+    } else {
+      setLeo(window.localStorage.getItem('leo'));
+    }
+    ///////////////////////Fetch Virgo////////////////////////
+    if (window.localStorage.getItem('virgo') === null) {
+      getVirgo();
+    } else {
+      setVirgo(window.localStorage.getItem('virgo'));
+    }
+    ///////////////////////Fetch Libra////////////////////////
+    if (window.localStorage.getItem('libra') === null) {
+      getLibra();
+    } else {
+      setLibra(window.localStorage.getItem('libra'));
+    }
+    ///////////////////////Fetch Scorpio////////////////////////
+    if (window.localStorage.getItem('scorpio') === null) {
+      getScorpio();
+    } else {
+      setScorpio(window.localStorage.getItem('scorpio'));
+    }
+    ///////////////////////Fetch Sagittarius////////////////////////
+    if (window.localStorage.getItem('sagittarius') === null) {
+      getSagittarius();
+    } else {
+      setSagittarius(window.localStorage.getItem('sagittarius'));
+    }
+    ///////////////////////Fetch Capricorn////////////////////////
+    if (window.localStorage.getItem('capricorn') === null) {
+      getCapricorn();
+    } else {
+      setCapricorn(window.localStorage.getItem('capricorn'));
+    }
+    ///////////////////////Fetch Aquarius////////////////////////
+    if (window.localStorage.getItem('aquarius') === null) {
+      getAquarius();
+    } else {
+      setAquarius(window.localStorage.getItem('aquarius'));
+    }
+    ///////////////////////Fetch Pisces////////////////////////
+    if (window.localStorage.getItem('pisces') === null) {
+      getPisces();
+    } else {
+      setPisces(window.localStorage.getItem('pisces'));
+    }
   }, []);
 
   return (

@@ -19,7 +19,7 @@ function Signs() {
 
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=${sign}&day=today`, {
+    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=${sign}&date=02-04-2023`, {
       method: 'POST',
     })
       .then((res) => res.json())
