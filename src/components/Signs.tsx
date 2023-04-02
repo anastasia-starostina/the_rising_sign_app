@@ -4,9 +4,7 @@ import { signs } from '../data/zodiac_signs';
 import { ZodiacSign } from '../types';
 import { capitalize } from '../utils/capitalizeFirstLetter';
 
-type SignsProps = {
-  onClick: MouseEventHandler<HTMLButtonElement>;
-};
+
 
 function Signs() {
   const [sign, setSign] = useState('');
@@ -18,22 +16,10 @@ function Signs() {
   }));
 
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_APP_BASE_URL}?sign=${sign}&date=02-04-2023`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json.description);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [sign]);
 
   return (
     <div className="p-12">
-      <section className="my-4 mx-3 font-display grid items-center justify-items-center gap-4 grid-cols-1 md:grid-cols-3 l:grid-cols-4 xl:grid-cols-6">
+      <section className="my-4 mx-20 font-display grid items-center justify-items-center gap-4 grid-cols-1 md:grid-cols-3 l:grid-cols-4 xl:grid-cols-6">
         {signs.map((sign: ZodiacSign) => (
           <button
             key={sign.id}
