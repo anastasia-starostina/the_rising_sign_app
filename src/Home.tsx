@@ -1,6 +1,7 @@
 import './index.css';
 import Logo from './assets/backgrounds/logo.png';
 import { useState, useEffect, ReactNode } from 'react';
+import getToday from './utils/getCurrentDate';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Signs from './components/Signs';
@@ -21,8 +22,8 @@ function Home() {
   const [aquarius, setAquarius] = useState<string | null>('');
   const [pisces, setPisces] = useState<string | null>('');
 
-  //stringify today's date
-  const date = '04-02-2023';
+  //Use a helper function to get the current date
+  const date = getToday()
 
   const fetchOptions = {
     method: 'POST',
@@ -69,7 +70,7 @@ function Home() {
         fetchOptions
       );
       const data = await response.json();
-      localStorage.setItem('taurus', data.description);
+      localStorage.setItem('gemini', data.description);
       setGemini(data.description);
       console.log(data.description);
     } catch (err) {
@@ -320,6 +321,7 @@ function Home() {
         <Horoscope children={scorpio} name="Scoprio" />
         <Horoscope children={sagittarius} name="Sagittarius" />
         <Horoscope children={capricorn} name="Capricorn" />
+        <Horoscope children={aquarius} name="Aquarius" />
         <Horoscope children={pisces} name="Pisces" />
       </div>
       <section className="mx-20 md:mx-40 my-5">
