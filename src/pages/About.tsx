@@ -9,7 +9,6 @@ function About() {
       <Header
         image={Mountains}
         header="About Rising Star"
-        subheader="Find Out About Rising Star's Story"
         isDarkBackground={true}
       />
       <section className="flex gap-x-10 mx-20 md:mx-60 my-4">

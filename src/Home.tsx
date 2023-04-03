@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Signs from './components/Signs';
 import Horoscope from './components/Horoscope';
-import Galaxy from './assets/backgrounds/cosmos.jpg';
+import Galaxy from './assets/backgrounds/cosmos2.jpg';
 
 function Home() {
   const [aries, setAries] = useState<string | null>('');
@@ -316,7 +316,7 @@ function Home() {
         subheader="Discover what your zodiac sign has in store for you today."
       />
       <Signs />
-      <section className="mx-20 md:mx-60 my-4 ">
+      <section className="mx-20 md:mx-40 my-4 ">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide hover:text-indigo-600">
           Free Horoscopes for Every Star Sign
         </h1>
@@ -329,7 +329,7 @@ function Home() {
           the stars.
         </p>
       </section>
-      <div className="mx-20 md:mx-60 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
+      <div className="mx-20 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
         <Horoscope children={aries} name="Aries" />
         <Horoscope children={taurus} name="Taurus" />
         <Horoscope children={gemini} name="Gemini" />
@@ -350,7 +350,11 @@ function Home() {
         <h3>
           If you enjoy our free daily horoscopes, please consider supporting
           this project on{' '}
-          <a className="text-indigo-500" href="">
+          <a
+            className="text-indigo-500"
+            href="https://www.patreon.com/AnastasiaDEV"
+            target="_blank"
+          >
             Patreon.
           </a>
         </h3>

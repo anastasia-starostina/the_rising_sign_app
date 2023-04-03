@@ -9,7 +9,7 @@ import { Link, NavLink } from 'react-router-dom';
 type HeaderProps = {
   image: string;
   header: string;
-  subheader: string;
+  subheader?: string;
   isDarkBackground: boolean;
 };
 
