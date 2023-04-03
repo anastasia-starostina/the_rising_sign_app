@@ -39,7 +39,28 @@ function Horoscopes() {
         </h1>
       </div>
       <div className="mx-20 md:mx-40 my-4 ">
-        {day === 'today' && <h1>Today</h1>}
+        {day === 'today' && (
+          <>
+            <h1 className='text-2xl py-5'>Discover Today's Horoscopes</h1>
+            <section className='flex flex-col gap-y-10'>
+            <div>
+             {/* <h3 className='text-lg'> Aries</h3> */}
+              {window.localStorage.getItem('aries')}
+              </div>
+            <div>{window.localStorage.getItem('taurus')}</div>
+            <div>{window.localStorage.getItem('gemini')}</div>
+            <div>{window.localStorage.getItem('cancer')}</div>
+            <div>{window.localStorage.getItem('leo')}</div>
+            <div>{window.localStorage.getItem('virgo')}</div>
+            <div>{window.localStorage.getItem('libra')}</div>
+            <div>{window.localStorage.getItem('scorpio')}</div>
+            <div>{window.localStorage.getItem('sagittarius')}</div>
+            <div>{window.localStorage.getItem('capricorn')}</div>
+            <div>{window.localStorage.getItem('aquarius')}</div>
+            <div>{window.localStorage.getItem('pisces')}</div>
+            </section>
+          </>
+        )}
         {day === 'yesterday' && <h1>Yesterday</h1>}
         {day === 'tomorrow' && <h1>Tomorrow</h1>}
       </div>

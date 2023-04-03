@@ -1,6 +1,6 @@
 import './index.css';
 import Logo from './assets/backgrounds/logo.png';
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import getToday from './utils/getCurrentDate';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -41,7 +41,10 @@ function Home() {
         fetchOptions
       );
       const data = await response.json();
+      //Save the data to local storage
       localStorage.setItem('aries', data.description);
+      //Save the date timestamp to local storage
+      localStorage.setItem('ariesDate', date);
       setAries(data.description);
       console.log(data.description);
     } catch (err) {
@@ -57,6 +60,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('taurus', data.description);
+      localStorage.setItem('taurusDate', date);
       setTaurus(data.description);
       console.log(data.description);
     } catch (err) {
@@ -72,6 +76,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('gemini', data.description);
+      localStorage.setItem('geminiDate', date);
       setGemini(data.description);
       console.log(data.description);
     } catch (err) {
@@ -87,6 +92,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('cancer', data.description);
+      localStorage.setItem('cancerDate', date);
       setCancer(data.description);
       console.log(data.description);
     } catch (err) {
@@ -102,6 +108,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('leo', data.description);
+      localStorage.setItem('leoDate', date);
       setLeo(data.description);
       console.log(data.description);
     } catch (err) {
@@ -117,6 +124,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('virgo', data.description);
+      localStorage.setItem('virgoDate', date);
       setVirgo(data.description);
       console.log(data.description);
     } catch (err) {
@@ -132,6 +140,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('libra', data.description);
+      localStorage.setItem('libraDate', date);
       setLibra(data.description);
       console.log(data.description);
     } catch (err) {
@@ -147,6 +156,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('scorpio', data.description);
+      localStorage.setItem('scorpioDate', date);
       setScorpio(data.description);
       console.log(data.description);
     } catch (err) {
@@ -162,6 +172,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('sagittarius', data.description);
+      localStorage.setItem('sagittariusDate', date);
       setSagittarius(data.description);
       console.log(data.description);
     } catch (err) {
@@ -177,6 +188,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('capricorn', data.description);
+      localStorage.setItem('capricornDate', date);
       setCapricorn(data.description);
       console.log(data.description);
     } catch (err) {
@@ -192,6 +204,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('aquarius', data.description);
+      localStorage.setItem('aqauriusDate', date);
       setAquarius(data.description);
       console.log(data.description);
     } catch (err) {
@@ -207,6 +220,7 @@ function Home() {
       );
       const data = await response.json();
       localStorage.setItem('pisces', data.description);
+      localStorage.setItem('piscesDate', date);
       setPisces(data.description);
       console.log(data.description);
     } catch (err) {
@@ -215,74 +229,78 @@ function Home() {
   };
 
   useEffect(() => {
+
+    //Check if the timestamp for each zodiac sign is the same as the current date
+
     ///////////////////////Fetch Aries////////////////////////
-    if (window.localStorage.getItem('aries') === null) {
+    if (window.localStorage.getItem('ariesDate') !== date) {
       getAries();
     } else {
       setAries(window.localStorage.getItem('aries'));
     }
+    
     ///////////////////////Fetch Taurus////////////////////////
-    if (window.localStorage.getItem('taurus') === null) {
+    if (window.localStorage.getItem('taurusDate') !== date) {
       getTaurus();
     } else {
       setTaurus(window.localStorage.getItem('taurus'));
     }
     ///////////////////////Fetch Gemini////////////////////////
-    if (window.localStorage.getItem('gemini') === null) {
+    if (window.localStorage.getItem('geminiDate') !== date) {
       getGemini();
     } else {
       setGemini(window.localStorage.getItem('gemini'));
     }
     ///////////////////////Fetch Cancer////////////////////////
-    if (window.localStorage.getItem('cancer') === null) {
+    if (window.localStorage.getItem('cancerDate') !== date) {
       getCancer();
     } else {
       setCancer(window.localStorage.getItem('cancer'));
     }
     ///////////////////////Fetch Leo////////////////////////
-    if (window.localStorage.getItem('leo') === null) {
+    if (window.localStorage.getItem('leoDate') !== date) {
       getLeo();
     } else {
       setLeo(window.localStorage.getItem('leo'));
     }
     ///////////////////////Fetch Virgo////////////////////////
-    if (window.localStorage.getItem('virgo') === null) {
+    if (window.localStorage.getItem('virgoDate') !== date) {
       getVirgo();
     } else {
       setVirgo(window.localStorage.getItem('virgo'));
     }
     ///////////////////////Fetch Libra////////////////////////
-    if (window.localStorage.getItem('libra') === null) {
+    if (window.localStorage.getItem('libraDate') !== date) {
       getLibra();
     } else {
       setLibra(window.localStorage.getItem('libra'));
     }
     ///////////////////////Fetch Scorpio////////////////////////
-    if (window.localStorage.getItem('scorpio') === null) {
+    if (window.localStorage.getItem('scorpioDate') !== date) {
       getScorpio();
     } else {
       setScorpio(window.localStorage.getItem('scorpio'));
     }
     ///////////////////////Fetch Sagittarius////////////////////////
-    if (window.localStorage.getItem('sagittarius') === null) {
+    if (window.localStorage.getItem('sagittariusDate') !== date) {
       getSagittarius();
     } else {
       setSagittarius(window.localStorage.getItem('sagittarius'));
     }
     ///////////////////////Fetch Capricorn////////////////////////
-    if (window.localStorage.getItem('capricorn') === null) {
+    if (window.localStorage.getItem('capricornDate') !== date) {
       getCapricorn();
     } else {
       setCapricorn(window.localStorage.getItem('capricorn'));
     }
     ///////////////////////Fetch Aquarius////////////////////////
-    if (window.localStorage.getItem('aquarius') === null) {
+    if (window.localStorage.getItem('aquariusDate') !== date) {
       getAquarius();
     } else {
       setAquarius(window.localStorage.getItem('aquarius'));
     }
     ///////////////////////Fetch Pisces////////////////////////
-    if (window.localStorage.getItem('pisces') === null) {
+    if (window.localStorage.getItem('piscesDate') !== date) {
       getPisces();
     } else {
       setPisces(window.localStorage.getItem('pisces'));
