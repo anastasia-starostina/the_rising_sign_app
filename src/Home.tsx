@@ -357,7 +357,6 @@ function Home() {
         <img src={Logo} alt="rising sign logo" />
       </section>
       <Footer />
-      <div>hello world</div>
     </>
   );
 }
