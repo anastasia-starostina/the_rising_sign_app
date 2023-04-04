@@ -1,7 +1,10 @@
 # Rising Sign - Horoscope App
 
+<img src="public/assets/screenshot_app.jpg" width="800"/>
+
 The Horoscope App is a React-based web application that allows users to view free daily horoscopes based on their star sign. The app uses [Twin Flame Horoscope API](https://github.com/TwinFlame-Development/horoscopeAPI) to fetch horoscope data and displays it in a user-friendly format.
 
+View the App Live: [https://risingsign.netlify.app/](https://risingsign.netlify.app/)
 
 ## Getting Started
 
