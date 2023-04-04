@@ -5,6 +5,7 @@ import Horoscope from '../components/Horoscope';
 import { useEffect, useState } from 'react';
 import getTomorrow from '../utils/getTomorrow';
 import getYesterday from '../utils/getYesterday';
+import backupData from '../data/backUpData';
 
 function Horoscopes() {
   const [day, setDay] = useState('today');
@@ -428,7 +429,7 @@ function Horoscopes() {
       />
       <div className="my-5 flex flex-col justify-center items-center gap-y-8 gap-x-20 md:flex-row tracking-wider">
         <h1
-          className={`duration-200 hover:text-indigo-600 ${
+          className={`duration-200 cursor-pointer hover:text-indigo-600 ${
             day === 'yesterday' ? 'border-b-4 border-solid border-black' : ''
           }`}
           onClick={() => setDay('yesterday')}
@@ -436,14 +437,14 @@ function Horoscopes() {
           YESTERDAY
         </h1>
         <h1
-          className={`border-slate-600 duration-200 hover:text-indigo-600 p-4'
+          className={`border-slate-600 duration-200 cursor-pointer hover:text-indigo-600 p-4'
             ${day === 'today' ? 'border-b-4 border-solid' : ''}`}
           onClick={() => setDay('today')}
         >
           TODAY
         </h1>
         <h1
-          className={`duration-200 hover:text-indigo-600 p-4 ${
+          className={`duration-200 cursor-pointer hover:text-indigo-600 p-4 ${
             day === 'tomorrow' ? 'border-b-4 border-solid border-black' : ''
           }`}
           onClick={() => setDay('tomorrow')}
@@ -460,51 +461,87 @@ function Horoscopes() {
             <section className="mx-5 md:mx-40 my-3 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
               <Horoscope
                 name="Aries"
-                children={window.localStorage.getItem('aries')}
+                children={
+                  window.localStorage.getItem('aries') ||
+                  backupData[0].description
+                }
               />
               <Horoscope
                 name="Taurus"
-                children={window.localStorage.getItem('taurus')}
+                children={
+                  window.localStorage.getItem('taurus') ||
+                  backupData[1].description
+                }
               />
               <Horoscope
                 name="Gemini"
-                children={window.localStorage.getItem('gemini')}
+                children={
+                  window.localStorage.getItem('gemini') ||
+                  backupData[2].description
+                }
               />
               <Horoscope
                 name="Cancer"
-                children={window.localStorage.getItem('cancer')}
+                children={
+                  window.localStorage.getItem('cancer') ||
+                  backupData[3].description
+                }
               />
               <Horoscope
                 name="Leo"
-                children={window.localStorage.getItem('leo')}
+                children={
+                  window.localStorage.getItem('leo') ||
+                  backupData[4].description
+                }
               />
               <Horoscope
                 name="Virgo"
-                children={window.localStorage.getItem('virgo')}
+                children={
+                  window.localStorage.getItem('virgo') ||
+                  backupData[5].description
+                }
               />
               <Horoscope
                 name="Libra"
-                children={window.localStorage.getItem('libra')}
+                children={
+                  window.localStorage.getItem('libra') ||
+                  backupData[6].description
+                }
               />
               <Horoscope
                 name="Scorpio"
-                children={window.localStorage.getItem('scorpio')}
+                children={
+                  window.localStorage.getItem('scorpio') ||
+                  backupData[7].description
+                }
               />
               <Horoscope
                 name="Sagittarius"
-                children={window.localStorage.getItem('sagittarius')}
+                children={
+                  window.localStorage.getItem('sagittarius') ||
+                  backupData[8].description
+                }
               />
               <Horoscope
                 name="Capricorn"
-                children={window.localStorage.getItem('capricorn')}
+                children={
+                  window.localStorage.getItem('capricorn') ||
+                  backupData[9].description
+                }
               />
               <Horoscope
                 name="Aquarius"
-                children={window.localStorage.getItem('aquarius')}
+                children={
+                  window.localStorage.getItem('aquarius') ||
+                  backupData[10].description
+                }
               />
               <Horoscope
                 name="Pisces"
-                children={window.localStorage.getItem('pisces')}
+                children={
+                  window.localStorage.getItem('pisces') ||
+                  backupData[11].description
+                }
               />
             </section>
           </>
@@ -515,18 +552,54 @@ function Horoscopes() {
               Discover Tomorow's Horoscopes
             </h1>
             <section className="mx-20 md:mx-40 my-3 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
-              <Horoscope name="Aries" children={ariesYesterday} />
-              <Horoscope name="Taurus" children={taurusYesterday} />
-              <Horoscope name="Gemini" children={geminiYesterday} />
-              <Horoscope name="Cancer" children={cancerYesterday} />
-              <Horoscope name="Leo" children={leoYesterday} />
-              <Horoscope name="Virgo" children={virgoYesterday} />
-              <Horoscope name="Libra" children={libraYesterday} />
-              <Horoscope name="Scorpio" children={scorpioYesterday} />
-              <Horoscope name="Sagittarius" children={sagittariusYesterday} />
-              <Horoscope name="Capricorn" children={capricornYesterday} />
-              <Horoscope name="Aquarius" children={aquariusYesterday} />
-              <Horoscope name="Pisces" children={piscesYesterday} />
+              <Horoscope
+                name="Aries"
+                children={ariesYesterday || backupData[0].description}
+              />
+              <Horoscope
+                name="Taurus"
+                children={taurusYesterday || backupData[1].description}
+              />
+              <Horoscope
+                name="Gemini"
+                children={geminiYesterday || backupData[2].description}
+              />
+              <Horoscope
+                name="Cancer"
+                children={cancerYesterday || backupData[3].description}
+              />
+              <Horoscope
+                name="Leo"
+                children={leoYesterday || backupData[4].description}
+              />
+              <Horoscope
+                name="Virgo"
+                children={virgoYesterday || backupData[5].description}
+              />
+              <Horoscope
+                name="Libra"
+                children={libraYesterday || backupData[6].description}
+              />
+              <Horoscope
+                name="Scorpio"
+                children={scorpioYesterday || backupData[7].description}
+              />
+              <Horoscope
+                name="Sagittarius"
+                children={sagittariusYesterday || backupData[8].description}
+              />
+              <Horoscope
+                name="Capricorn"
+                children={capricornYesterday || backupData[9].description}
+              />
+              <Horoscope
+                name="Aquarius"
+                children={aquariusYesterday || backupData[10].description}
+              />
+              <Horoscope
+                name="Pisces"
+                children={piscesYesterday || backupData[11].description}
+              />
             </section>
           </>
         )}
@@ -536,18 +609,54 @@ function Horoscopes() {
               Discover Tomorow's Horoscopes
             </h1>
             <section className="mx-20 md:mx-40 my-3 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
-              <Horoscope name="Aries" children={aries} />
-              <Horoscope name="Taurus" children={taurus} />
-              <Horoscope name="Gemini" children={gemini} />
-              <Horoscope name="Cancer" children={cancer} />
-              <Horoscope name="Leo" children={leo} />
-              <Horoscope name="Virgo" children={virgo} />
-              <Horoscope name="Libra" children={libra} />
-              <Horoscope name="Scorpio" children={scorpio} />
-              <Horoscope name="Sagittarius" children={sagittarius} />
-              <Horoscope name="Capricorn" children={capricorn} />
-              <Horoscope name="Aquarius" children={aquarius} />
-              <Horoscope name="Pisces" children={pisces} />
+              <Horoscope
+                name="Aries"
+                children={aries || backupData[0].description}
+              />
+              <Horoscope
+                name="Taurus"
+                children={taurus || backupData[1].description}
+              />
+              <Horoscope
+                name="Gemini"
+                children={gemini || backupData[2].description}
+              />
+              <Horoscope
+                name="Cancer"
+                children={cancer || backupData[3].description}
+              />
+              <Horoscope
+                name="Leo"
+                children={leo || backupData[4].description}
+              />
+              <Horoscope
+                name="Virgo"
+                children={virgo || backupData[5].description}
+              />
+              <Horoscope
+                name="Libra"
+                children={libra || backupData[6].description}
+              />
+              <Horoscope
+                name="Scorpio"
+                children={scorpio || backupData[7].description}
+              />
+              <Horoscope
+                name="Sagittarius"
+                children={sagittarius || backupData[8].description}
+              />
+              <Horoscope
+                name="Capricorn"
+                children={capricorn || backupData[9].description}
+              />
+              <Horoscope
+                name="Aquarius"
+                children={aquarius || backupData[10].description}
+              />
+              <Horoscope
+                name="Pisces"
+                children={pisces || backupData[11].description}
+              />
             </section>
           </>
         )}

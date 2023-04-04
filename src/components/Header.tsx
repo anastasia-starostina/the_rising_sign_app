@@ -68,8 +68,10 @@ function Header({ image, header, subheader, isDarkBackground }: HeaderProps) {
               <MagnifyingGlassIcon className=" h-6 w-6" />
             </a>
           </form>
-          <h3 className=" text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl absolute">
+          <h3 className="cursor-pointer text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl absolute">
+          <Link to="/">
             RISING SIGN
+          </Link>
           </h3>
           <div className="invisible flex gap-x-8 items-center lg:visible">
             <FaFacebookF />

@@ -1,6 +1,7 @@
 import './index.css';
 import Logo from './assets/backgrounds/logo.png';
 import { useState, useEffect } from 'react';
+import backupData from './data/backUpData';
 import getToday from './utils/getCurrentDate';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -330,18 +331,52 @@ function Home() {
         </p>
       </section>
       <div className="mx-5 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
-        <Horoscope children={aries} name="Aries" />
-        <Horoscope children={taurus} name="Taurus" />
-        <Horoscope children={gemini} name="Gemini" />
-        <Horoscope children={cancer} name="Cancer" />
-        <Horoscope children={leo} name="Leo" />
-        <Horoscope children={virgo} name="Virgo" />
-        <Horoscope children={libra} name="Libra" />
-        <Horoscope children={scorpio} name="Scoprio" />
-        <Horoscope children={sagittarius} name="Sagittarius" />
-        <Horoscope children={capricorn} name="Capricorn" />
-        <Horoscope children={aquarius} name="Aquarius" />
-        <Horoscope children={pisces} name="Pisces" />
+        {/*If API responds with error, return backup horoscope data */}
+        <Horoscope
+          children={aries || backupData[0].description}
+          name="Aries"
+        />
+        <Horoscope
+          children={taurus || backupData[1].description}
+          name="Taurus"
+        />
+        <Horoscope
+          children={gemini || backupData[2].description}
+          name="Gemini"
+        />
+        <Horoscope
+          children={cancer || backupData[3].description}
+          name="Cancer"
+        />
+        <Horoscope children={leo || backupData[4].description} name="Leo" />
+        <Horoscope
+          children={virgo || backupData[5].description}
+          name="Virgo"
+        />
+        <Horoscope
+          children={libra || backupData[6].description}
+          name="Libra"
+        />
+        <Horoscope
+          children={scorpio || backupData[7].description}
+          name="Scoprio"
+        />
+        <Horoscope
+          children={sagittarius || backupData[8].description}
+          name="Sagittarius"
+        />
+        <Horoscope
+          children={capricorn || backupData[9].description}
+          name="Capricorn"
+        />
+        <Horoscope
+          children={aquarius || backupData[10].description}
+          name="Aquarius"
+        />
+        <Horoscope
+          children={pisces || backupData[11].description}
+          name="Pisces"
+        />
       </div>
       <section className="mx-5 md:mx-40 my-5">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
