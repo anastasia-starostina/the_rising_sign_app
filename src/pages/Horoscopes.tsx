@@ -454,10 +454,10 @@ function Horoscopes() {
       <div>
         {day === 'today' && (
           <>
-            <h1 className="pl-4 text-2xl py-3 mx-20 md:mx-40">
+            <h1 className="pl-4 text-2xl py-3 mx-5 md:mx-40">
               Discover Today's Horoscopes
             </h1>
-            <section className="mx-20 md:mx-40 my-3 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
+            <section className="mx-5 md:mx-40 my-3 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
               <Horoscope
                 name="Aries"
                 children={window.localStorage.getItem('aries')}

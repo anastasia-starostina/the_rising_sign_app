@@ -316,7 +316,7 @@ function Home() {
         subheader="Discover what your zodiac sign has in store for you today."
       />
       <Signs />
-      <section className="mx-20 md:mx-40 my-4 ">
+      <section className="mx-5 md:mx-40 my-4 ">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide hover:text-indigo-600">
           Free Horoscopes for Every Star Sign
         </h1>
@@ -329,7 +329,7 @@ function Home() {
           the stars.
         </p>
       </section>
-      <div className="mx-20 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
+      <div className="mx-5 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
         <Horoscope children={aries} name="Aries" />
         <Horoscope children={taurus} name="Taurus" />
         <Horoscope children={gemini} name="Gemini" />
@@ -343,7 +343,7 @@ function Home() {
         <Horoscope children={aquarius} name="Aquarius" />
         <Horoscope children={pisces} name="Pisces" />
       </div>
-      <section className="mx-20 md:mx-40 my-5">
+      <section className="mx-5 md:mx-40 my-5">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
           Support Us on Patreon
         </h1>

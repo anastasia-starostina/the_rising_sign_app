@@ -11,8 +11,8 @@ function About() {
         header="About Rising Star"
         isDarkBackground={true}
       />
-      <section className="flex gap-x-10 mx-20 md:mx-60 my-4">
-        <img src={Cactus} alt="" className="w-1/2 p-10" />
+      <section className="flex flex-col gap-x-10 mx-5 md:mx-60 my-4 lg:flex-row ">
+        <img src={Cactus} alt="" className=" w-1/2 p-10 md:visible" />
         <div className=" text-base leading-7 tracking-wide md:text-base my-5">
           <h2 className="tracking-wider font-semibold text-xl py-3">Meet Your Astrologers</h2>
           Rising Sign is a new horoscope website designed to help you navigate
