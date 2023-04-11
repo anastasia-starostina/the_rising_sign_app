@@ -28,10 +28,16 @@ function Home() {
 
   //Fetch options for the API call
   const fetchOptions = {
-    method: 'POST',
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
+      "Host": 'https://us-central1-tf-natal.cloudfunctions.net',
       'Access-Control-Allow-Origin': '*',
+      "Accept": "application/json",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+      "Connection": "keep-alive",
+      "Access-Control-Allow-Credentials": "true",
     },
   };
   //Fetch Aries

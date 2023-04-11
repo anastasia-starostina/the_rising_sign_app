@@ -549,7 +549,7 @@ function Horoscopes() {
         {day === 'yesterday' && (
           <>
             <h1 className="pl-4 text-2xl py-3 mx-20 md:mx-40">
-              Discover Tomorow's Horoscopes
+              Discover Yesterday's Horoscopes
             </h1>
             <section className="mx-20 md:mx-40 my-3 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
               <Horoscope
