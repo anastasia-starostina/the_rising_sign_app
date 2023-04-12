@@ -25,19 +25,17 @@ function Home() {
 
   //Use a helper function to get the current date
   const date = getToday();
+  console.log(`Current date: ${date}`);
 
   //Fetch options for the API call
   const fetchOptions = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      "Host": 'https://us-central1-tf-natal.cloudfunctions.net',
       'Access-Control-Allow-Origin': '*',
-      "Accept": "application/json",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
-      "Connection": "keep-alive",
-      "Access-Control-Allow-Credentials": "true",
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers':
+        'Origin, X-Requested-With, Content-Type, Accept',
     },
   };
   //Fetch Aries
@@ -236,7 +234,6 @@ function Home() {
   };
 
   useEffect(() => {
-
     //Check if the timestamp for each zodiac sign is the same as the current date
 
     ///////////////////////Fetch Aries////////////////////////
@@ -245,7 +242,7 @@ function Home() {
     } else {
       setAries(window.localStorage.getItem('aries'));
     }
-    
+
     ///////////////////////Fetch Taurus////////////////////////
     if (window.localStorage.getItem('taurusDate') !== date) {
       getTaurus();
@@ -338,10 +335,7 @@ function Home() {
       </section>
       <div className="mx-5 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
         {/*If API responds with error, return backup horoscope data */}
-        <Horoscope
-          children={aries || backupData[0].description}
-          name="Aries"
-        />
+        <Horoscope children={aries || backupData[0].description} name="Aries" />
         <Horoscope
           children={taurus || backupData[1].description}
           name="Taurus"
@@ -355,14 +349,8 @@ function Home() {
           name="Cancer"
         />
         <Horoscope children={leo || backupData[4].description} name="Leo" />
-        <Horoscope
-          children={virgo || backupData[5].description}
-          name="Virgo"
-        />
-        <Horoscope
-          children={libra || backupData[6].description}
-          name="Libra"
-        />
+        <Horoscope children={virgo || backupData[5].description} name="Virgo" />
+        <Horoscope children={libra || backupData[6].description} name="Libra" />
         <Horoscope
           children={scorpio || backupData[7].description}
           name="Scoprio"
