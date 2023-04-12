@@ -12,6 +12,7 @@
     "lint:styles": "stylelint \"src/**/*.css\""
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.2.2",
     "@heroicons/react": "^2.0.16",
     "@react-spring/web": "^9.7.1",
     "http-proxy-middleware": "^2.0.6",
