@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Mountains from "../assets/backgrounds/mountains.jpg";
 import Cactus from "../assets/backgrounds/cactus.jpg";
 
+
 function About() {
   return (
     <div>
