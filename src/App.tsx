@@ -8,13 +8,20 @@ const NoMatch = React.lazy(() => import('./pages/NoMatch'));
 const Explore = React.lazy(() => import('./pages/Explore'));
 const Horoscopes = React.lazy(() => import('./pages/Horoscopes'));
 
+const loaderFallback = (
+  <div className="loading-pane">
+    <h2 className="loader">✨</h2>
+    <h4>Loading...</h4>
+  </div>
+);
+
 export function App() {
   return (
     <Routes>
       <Route
         path="/"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={loaderFallback}>
             <Home />
           </Suspense>
         }
@@ -22,7 +29,7 @@ export function App() {
       <Route
         path="/about"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={loaderFallback}>
             <About />
           </Suspense>
         }
@@ -30,7 +37,7 @@ export function App() {
       <Route
         path="/explore"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={loaderFallback}>
             <Explore />
           </Suspense>
         }
@@ -38,7 +45,7 @@ export function App() {
       <Route
         path="/horoscopes"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={loaderFallback}>
             <Horoscopes />
           </Suspense>
         }
