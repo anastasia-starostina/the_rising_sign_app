@@ -13,9 +13,14 @@ function About() {
         isDarkBackground={true}
       />
       <section className="flex flex-col gap-x-10 mx-5 md:mx-60 my-4 lg:flex-row ">
-        <img src={Cactus} alt="" className=" w-1/2 p-10 md:visible" />
+        <div className="bg-[#fcf3f8] shadow-md ">
+          <img src={Cactus} alt="" className="w-5/6 mx-auto lg:w-full p-10 " />
+        </div>
+
         <div className=" text-base leading-7 tracking-wide md:text-base my-5">
-          <h2 className="tracking-wider font-semibold text-xl py-3">Meet Your Astrologers</h2>
+          <h2 className="tracking-wider font-semibold text-xl py-3">
+            Meet Your Astrologers
+          </h2>
           Rising Sign is a new horoscope website designed to help you navigate
           your life's journey with confidence and clarity. We believe that
           astrology is a powerful tool that can help you understand yourself and

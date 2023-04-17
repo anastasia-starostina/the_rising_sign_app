@@ -69,15 +69,13 @@ function Header({ image, header, subheader, isDarkBackground }: HeaderProps) {
             </a>
           </form>
           <h3 className="cursor-pointer text-center text-[#3a3153] font-thin tracking-[.25em] md:text-2xl lg:text-2xl absolute">
-          <Link to="/">
-            RISING SIGN
-          </Link>
+            <Link to="/">RISING SIGN</Link>
           </h3>
           <div className="invisible flex gap-x-8 items-center lg:visible">
-            <FaFacebookF />
-            <ImInstagram />
-            <AiFillYoutube />
-            <AiOutlineTwitter />
+            <FaFacebookF className="cursor-pointer" />
+            <ImInstagram className="cursor-pointer" />
+            <AiFillYoutube className="cursor-pointer" />
+            <AiOutlineTwitter className="cursor-pointer" />
           </div>
         </header>
       </div>
