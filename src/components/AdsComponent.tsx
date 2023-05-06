@@ -1,11 +1,17 @@
 import React, { useEffect } from 'react';
 
-const AdsComponent = (props) => {
+declare global {
+  interface Window {
+    adsbygoogle?: { push: () => void }[];
+  }
+}
+
+const AdsComponent: React.FC<{ dataAdSlot: string }> = (props) => {
   const { dataAdSlot } = props;
 
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      (window.adsbygoogle = window.adsbygoogle || []).push({ push: () => {} });
     } catch (e) {}
   }, []);
 
