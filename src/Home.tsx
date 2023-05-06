@@ -1,4 +1,5 @@
 import './index.css';
+import AdsComponent from './components/AdsComponent';
 import Logo from './assets/backgrounds/logo.png';
 import { useState, useEffect } from 'react';
 import backupData from './data/backUpData';
