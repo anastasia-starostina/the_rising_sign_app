@@ -1,4 +1,5 @@
 import './index.css';
+import AdsComponent from './components/AdsComponent';
 import Logo from './assets/backgrounds/logo.png';
 import { useState, useEffect } from 'react';
 import backupData from './data/backUpData';
@@ -320,6 +321,7 @@ function Home() {
         subheader="Discover what your zodiac sign has in store for you today."
       />
       <Signs />
+      <AdsComponent />
       <section className="mx-5 md:mx-40 my-4 ">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide hover:text-indigo-600">
           Free Horoscopes for Every Star Sign

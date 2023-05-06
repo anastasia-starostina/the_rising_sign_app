@@ -1,0 +1,10 @@
+# name: Rising Sugn CI/CD
+
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   build:
+#     runs-on:
+#     steps:
