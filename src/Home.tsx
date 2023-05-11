@@ -23,7 +23,7 @@ interface HoroscopeState {
 }
 
 function Home() {
-   const [horoscopes, setHoroscopes] = useState<HoroscopeState>({});
+  const [horoscopes, setHoroscopes] = useState<HoroscopeState>({});
 
   //Use a helper function to get the current date
   const date = getToday();
@@ -41,51 +41,61 @@ function Home() {
     },
   };
 
-    useEffect(() => {
-      const fetchData = async () => {
-        const ariesData = await getHoroscopeData('aries');
-        const taurusData = await getHoroscopeData('taurus');
-        const geminiData = await getHoroscopeData('gemini');
-        const cancerData = await getHoroscopeData('cancer');
-        const leoData = await getHoroscopeData('leo');
-        const virgoData = await getHoroscopeData('virgo');
-        const libraData = await getHoroscopeData('libra');
-        const scorpioData = await getHoroscopeData('scorpio');
-        const sagittariusData = await getHoroscopeData('sagittarius');
-        const capricornData = await getHoroscopeData('capricorn');
-        const aquariusData = await getHoroscopeData('aquarius');
-        const piscesData = await getHoroscopeData('pisces');
-        setHoroscopes({
-          aries: ariesData,
-          taurus: taurusData,
-          gemini: geminiData,
-          cancer: cancerData,
-          leo: leoData,
-          virgo: virgoData,
-          libra: libraData,
-          scorpio: scorpioData,
-          sagittarius: sagittariusData,
-          capricorn: capricornData,
-          aquarius: aquariusData,
-          pisces: piscesData,
-        });
-      };
-      fetchData();
-    }, []);
-
-    const getHoroscopeData = async (horoscope : string) => {
-      try {
-      const url = `${
-      import.meta.env.VITE_APP_BASE_URL}&sign=${horoscope}&date=${date}`;
-       const response = await fetch(url, fetchOptions);
-       const data = await response.json();
-       return data; }
-       catch (error) {
-         console.error(error);
-          const backup = backupData.find((sign) => sign.name === horoscope);
-          return backup;
+   useEffect(() => {
+     const fetchData = async () => {
+       // Check if horoscopes data is in localStorage
+       const cachedHoroscopes = localStorage.getItem('horoscopes');
+       if (cachedHoroscopes) {
+         setHoroscopes(JSON.parse(cachedHoroscopes));
+       } else {
+         const ariesData = await getHoroscopeData('aries');
+         const taurusData = await getHoroscopeData('taurus');
+         const geminiData = await getHoroscopeData('gemini');
+         const cancerData = await getHoroscopeData('cancer');
+         const leoData = await getHoroscopeData('leo');
+         const virgoData = await getHoroscopeData('virgo');
+         const libraData = await getHoroscopeData('libra');
+         const scorpioData = await getHoroscopeData('scorpio');
+         const sagittariusData = await getHoroscopeData('sagittarius');
+         const capricornData = await getHoroscopeData('capricorn');
+         const aquariusData = await getHoroscopeData('aquarius');
+         const piscesData = await getHoroscopeData('pisces');
+         const horoscopeData = {
+           aries: ariesData,
+           taurus: taurusData,
+           gemini: geminiData,
+           cancer: cancerData,
+           leo: leoData,
+           virgo: virgoData,
+           libra: libraData,
+           scorpio: scorpioData,
+           sagittarius: sagittariusData,
+           capricorn: capricornData,
+           aquarius: aquariusData,
+           pisces: piscesData,
+         };
+         // Store horoscopes data in localStorage
+         localStorage.setItem('horoscopes', JSON.stringify(horoscopeData));
+         setHoroscopes(horoscopeData);
        }
-    };
+     };
+     fetchData();
+   }, []);
+
+  const getHoroscopeData = async (horoscope: string) => {
+    try {
+      const url = `${
+        import.meta.env.VITE_APP_BASE_URL
+      }&sign=${horoscope}&date=${date}`;
+      const response = await fetch(url, fetchOptions);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+      const backup = backupData.find((sign) => sign.name === horoscope);
+      return backup;
+    }
+  };
 
   return (
     <>
@@ -111,10 +121,13 @@ function Home() {
       </section>
       <div className="mx-5 md:mx-40 my-6 grid grid-cols-1 gap-x-20 gap-y-5 lg:grid-cols-2 sm:grid-cols-1">
         {/*If API responds with error, return backup horoscope data */}
-          {Object.entries(horoscopes).map(([key, value]) => (
-           <Horoscope children={value.description} name={key.charAt(0).toUpperCase() + key.substring(1)} key={key}/>
-          ))}
-
+        {Object.entries(horoscopes).map(([key, value]) => (
+          <Horoscope
+            children={value.description}
+            name={key.charAt(0).toUpperCase() + key.substring(1)}
+            key={key}
+          />
+        ))}
       </div>
       <section className="mx-5 md:mx-40 my-5">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide">
