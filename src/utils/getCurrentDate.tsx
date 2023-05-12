@@ -6,7 +6,6 @@ function getToday() {
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
 
-  let newDay;
   let newMonth;
     // If the day or month is less than 10, add a 0 to the front of the number.
     if (day < 10) {
