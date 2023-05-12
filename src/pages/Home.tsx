@@ -1,13 +1,13 @@
-import './index.css';
-import Logo from './assets/backgrounds/logo.png';
+import '../index.css';
+import Logo from '../assets/backgrounds/logo.png';
 import { useState, useEffect } from 'react';
-import backupData from './data/backUpData';
-import getToday from './utils/getCurrentDate';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Signs from './components/Signs';
-import Horoscope from './components/Horoscope';
-import Galaxy from './assets/backgrounds/cosmos2.jpg';
+import backupData from '../data/backUpData';
+import getToday from '../utils/getCurrentDate';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Signs from '../components/Signs';
+import Horoscope from '../components/Horoscope';
+import Galaxy from '../assets/backgrounds/cosmos2.jpg';
 
 interface HoroscopeData {
   description: string;
@@ -41,46 +41,46 @@ function Home() {
     },
   };
 
-   useEffect(() => {
-     const fetchData = async () => {
-       // Check if horoscopes data is in localStorage
-       const cachedHoroscopes = localStorage.getItem('horoscopes');
-       if (cachedHoroscopes) {
-         setHoroscopes(JSON.parse(cachedHoroscopes));
-       } else {
-         const ariesData = await getHoroscopeData('aries');
-         const taurusData = await getHoroscopeData('taurus');
-         const geminiData = await getHoroscopeData('gemini');
-         const cancerData = await getHoroscopeData('cancer');
-         const leoData = await getHoroscopeData('leo');
-         const virgoData = await getHoroscopeData('virgo');
-         const libraData = await getHoroscopeData('libra');
-         const scorpioData = await getHoroscopeData('scorpio');
-         const sagittariusData = await getHoroscopeData('sagittarius');
-         const capricornData = await getHoroscopeData('capricorn');
-         const aquariusData = await getHoroscopeData('aquarius');
-         const piscesData = await getHoroscopeData('pisces');
-         const horoscopeData = {
-           aries: ariesData,
-           taurus: taurusData,
-           gemini: geminiData,
-           cancer: cancerData,
-           leo: leoData,
-           virgo: virgoData,
-           libra: libraData,
-           scorpio: scorpioData,
-           sagittarius: sagittariusData,
-           capricorn: capricornData,
-           aquarius: aquariusData,
-           pisces: piscesData,
-         };
-         // Store horoscopes data in localStorage
-         localStorage.setItem('horoscopes', JSON.stringify(horoscopeData));
-         setHoroscopes(horoscopeData);
-       }
-     };
-     fetchData();
-   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      // Check if horoscopes data is in localStorage
+      const cachedHoroscopes = localStorage.getItem('horoscopes');
+      if (cachedHoroscopes) {
+        setHoroscopes(JSON.parse(cachedHoroscopes));
+      } else {
+        const ariesData = await getHoroscopeData('aries');
+        const taurusData = await getHoroscopeData('taurus');
+        const geminiData = await getHoroscopeData('gemini');
+        const cancerData = await getHoroscopeData('cancer');
+        const leoData = await getHoroscopeData('leo');
+        const virgoData = await getHoroscopeData('virgo');
+        const libraData = await getHoroscopeData('libra');
+        const scorpioData = await getHoroscopeData('scorpio');
+        const sagittariusData = await getHoroscopeData('sagittarius');
+        const capricornData = await getHoroscopeData('capricorn');
+        const aquariusData = await getHoroscopeData('aquarius');
+        const piscesData = await getHoroscopeData('pisces');
+        const horoscopeData = {
+          aries: ariesData,
+          taurus: taurusData,
+          gemini: geminiData,
+          cancer: cancerData,
+          leo: leoData,
+          virgo: virgoData,
+          libra: libraData,
+          scorpio: scorpioData,
+          sagittarius: sagittariusData,
+          capricorn: capricornData,
+          aquarius: aquariusData,
+          pisces: piscesData,
+        };
+        // Store horoscopes data in localStorage
+        localStorage.setItem('horoscopes', JSON.stringify(horoscopeData));
+        setHoroscopes(horoscopeData);
+      }
+    };
+    fetchData();
+  }, []);
 
   const getHoroscopeData = async (horoscope: string) => {
     try {

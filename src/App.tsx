@@ -2,7 +2,7 @@ import './index.css';
 import { Routes, Route } from 'react-router-dom';
 import { Suspense } from 'react';
 import React from 'react';
-const Home = React.lazy(() => import('./Home'));
+const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
 const NoMatch = React.lazy(() => import('./pages/NoMatch'));
 const Explore = React.lazy(() => import('./pages/Explore'));

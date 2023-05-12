@@ -3,7 +3,6 @@ import { FaFacebookF } from 'react-icons/fa/index';
 import { ImInstagram } from 'react-icons/im/index';
 import { AiFillYoutube } from 'react-icons/ai/index';
 import { AiOutlineTwitter } from 'react-icons/ai/index';
-import Galaxy from '../assets/backgrounds/cosmos.jpg';
 import { Link, NavLink } from 'react-router-dom';
 
 type HeaderProps = {
