@@ -25,10 +25,7 @@ This will install the necessary dependencies and start the development server.
 
 ## Using the App
 
-When you first load the app, you will be prompted to enter your star sign. Once you have entered your sign, you will see a daily horoscope for that sign. You can also view horoscopes for other signs by scrolling down the Home page or heading to the Horoscopes section of the website.
-
-
-The app also allows you to view horoscopes for previous and upcoming days by clicking on 'YESTERDAY'. and 'TOMORROW' on the Horoscopes page. 
+When you first load the app, you will see a daily horoscope for all zodiac signs. You can also view horoscopes yesterday and tomorrow by heading to the Horoscopes section of the website. Subscribe to the newsletter in the footer section of the website to get free daily horoscopes in your email.
 
 The UI and UX of the app are focused on providing a calming and mystical atmosphere, with muted colors and astrology-inspired purple shades. The layout is clean and easy to navigate, with clear section headings and buttons.
 
@@ -36,6 +33,7 @@ The UI and UX of the app are focused on providing a calming and mystical atmosph
 The Rising Sign App is built using a number of technologies, including:
 
  - React
+ - TypeScript
  - React Router
  - React Spring
  - Vite
