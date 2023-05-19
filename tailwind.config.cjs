@@ -5,7 +5,6 @@ module.exports = {
       fontFamily: {
         display: ['Merriweather', 'serif'],
       },
-
   },
   plugins: [],
 };

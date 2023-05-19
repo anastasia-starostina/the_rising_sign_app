@@ -6,8 +6,7 @@ declare global {
   }
 }
 
-const AdsComponent: React.FC<{ dataAdSlot: string }> = (props) => {
-  const { dataAdSlot } = props;
+const AdsComponent = () => {
 
   useEffect(() => {
     try {
@@ -19,9 +18,9 @@ const AdsComponent: React.FC<{ dataAdSlot: string }> = (props) => {
     <>
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
-        data-ad-slot={dataAdSlot}
+        style={{display: 'block'}}
+        data-ad-client="ca-pub-5764345831028193"
+        data-ad-slot="6768616308"
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>

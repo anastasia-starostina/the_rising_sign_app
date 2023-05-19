@@ -8,10 +8,10 @@ function SubscribeForm() {
   const FORM_URL = import.meta.env.VITE_APP_SUBSCRIPTION_FORM_URL;
 
   const handleSubmit = async (event: React.FormEvent) => {
+    
+    // handle form submission
     event.preventDefault();
-
     const data = new FormData(event.target as HTMLFormElement);
-
     try {
       const response = await fetch(FORM_URL, {
         method: 'post',

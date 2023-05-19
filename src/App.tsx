@@ -8,6 +8,7 @@ const NoMatch = React.lazy(() => import('./pages/NoMatch'));
 const Explore = React.lazy(() => import('./pages/Explore'));
 const Horoscopes = React.lazy(() => import('./pages/Horoscopes'));
 
+//loading screen
 const loaderFallback = (
   <div className="loading-pane">
     <h2 className="loader">✨</h2>

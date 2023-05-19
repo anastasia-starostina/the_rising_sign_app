@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Signs from '../components/Signs';
 import Horoscope from '../components/Horoscope';
 import Galaxy from '../assets/backgrounds/cosmos2.jpg';
+import AdsComponent from '../components/AdsComponent';
 
 interface HoroscopeData {
   description: string;
@@ -60,6 +61,7 @@ function Home() {
         const capricornData = await getHoroscopeData('capricorn');
         const aquariusData = await getHoroscopeData('aquarius');
         const piscesData = await getHoroscopeData('pisces');
+
         const horoscopeData = {
           aries: ariesData,
           taurus: taurusData,
@@ -84,9 +86,7 @@ function Home() {
 
   const getHoroscopeData = async (horoscope: string) => {
     try {
-      const url = `${
-        import.meta.env.VITE_APP_BASE_URL
-      }&sign=${horoscope}&date=${date}`;
+      const url = `${import.meta.env.VITE_APP_BASE_URL}&sign=${horoscope}&date=${date}`;
       const response = await fetch(url, fetchOptions);
       const data = await response.json();
       return data;
@@ -106,6 +106,7 @@ function Home() {
         subheader="Discover what your zodiac sign has in store for you today."
       />
       <Signs />
+      <AdsComponent />
       <section className="mx-5 md:mx-40 my-4 ">
         <h1 className="text-lg py-3 mb-3 md:text-2xl font-bold tracking-wide hover:text-indigo-600">
           Free Horoscopes for Every Star Sign
